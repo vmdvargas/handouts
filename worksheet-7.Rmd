@@ -1,12 +1,15 @@
 ---
-output: html_document
+output: ioslides_presentation
+runtime: shiny_prerendered
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include = FALSE}
 library(knitr)
+library(tools)
 opts_chunk$set(
   message = FALSE,
-  warning = FALSE)
+  warning = FALSE,
+  cache = TRUE)
 ```
 
 ## Seeing is Believing
@@ -21,69 +24,75 @@ Plain text about ...something... important.
 Bulleted Lists
 
 - SQL
-- ...
+- Python
+- R
 
 Numbered Lists
 
 6. SQL
-1. ...
+1. Python
+5. R
 
 Tables
 
-id | ...
-...
+id | treatment
+---|----------
 1  | control
 2  | exclosure
 
 # The Biggest Heading
 
-## ...
+## The Second Bigges Heading
 
-... The Third Biggest Heading
+### The Third Biggest Heading
 
 ## Chunks
 
 ```
-The ... indicated by asterisks here does not become
-italicized, as it would outside the "code fence".
+The *emphasis* indicated by asterisks here does not become
+italicized, as it would outside a "code fence".
 ```
 
 ```
-seq(...)
+seq(1, 10)
 ```
 
 ## RMarkdown
 
-```...
+```{r}
 seq(1, 10)
 ```
 
 ## Chunk Options
 
-```...
+```{r, echo = FALSE}
 seq(1, 10)
 ```
 
 ## Chunk Labels
 
-```{...}
+```{r does_not_run, eval = FALSE}
 seq(1, 10)
 ```
 
 ## Sourced Input
 
-```{... load_data, echo = FALSE}
-...
+```{r load_data, context = 'data', echo = FALSE, cache.extra = md5sum('worksheet-7.R')}
+source('worksheet-7.R')
+cty_to_cty <- subset(cty_to_cty, !is.na(movers_state_est))
 ```
 
-```{... bar_plot, echo = FALSE}
+```{r bar_plot}
 library(ggplot2)
-ggplot(...,
-  aes(x = current_state, y = sum_new_movers)) +
+ggplot(state_movers,
+  aes(
+    x = reorder(current_state, -sum_new_movers), 
+    y = sum_new_movers)) +
   geom_bar(stat = 'identity') +
   theme(axis.text.x = element_text(
     angle = 90, hjust = 1))
 ```
+
 
 ## Alternative Engines
 
@@ -92,13 +101,13 @@ greeting = 'Hello, {}!'
 print(greeting.format('World'))
 ```
 
-```{...}
+```{bash}
 echo "Hello, ${USER}!"
 ```
 
 ## Cache Dependencies
 
-```{... clean_bar_plot, ..., echo = FALSE}
+```{r clean_bar_plot, dependson = 'load_data', echo = FALSE}
 ggplot(state_movers,
   aes(
     x = reorder(current_state, -sum_new_movers), 
@@ -110,16 +119,16 @@ ggplot(state_movers,
 
 ## Input Objects
 
-```{..., echo = FALSE}
-...('pick_state',
+```{r, echo = FALSE}
+selectInput('pick_state',
   label = 'Pick a State',
   choices = unique(cty_to_cty[['current_state']]))
 ```
 
-```{..., context = 'server'}
+```{r, context = 'server'}
 library(dplyr)
-... <- ...({
-cty_to_cty %>%
+output[['mov_plot']] <- renderPlot({
+  cty_to_cty %>%
     filter(current_state == input[['pick_state']]) %>%
     group_by(prior_1year_state) %>%
     summarise(sum_new_movers = sum(movers_state_est, na.rm = TRUE)) %>%
@@ -129,26 +138,26 @@ cty_to_cty %>%
 })
 ```
 
-```{..., echo = FALSE}
-...
+```{r, echo = FALSE}
+plotOutput('mov_plot')
 ```
 
 ## Reactivity
 
-```{..., context = 'server'}
-plot_data <- ...
-  filter(cty_to_cty, current_state == input[['pick_state']]) %>%
+```{r, context = 'server'}
+plot_data <- reactive({
+    filter(cty_to_cty, current_state == input[['pick_state']]) %>%
     group_by(prior_1year_state) %>%
     summarise(sum_new_movers = sum(movers_state_est, na.rm = TRUE))
 })
 output[['react_mov_plot']] <- renderPlot({
-  ... %>%
-  ggplot(aes(x = prior_1year_state, y = sum_new_movers)) +
+  plot_data() %>%
+    ggplot(aes(x = prior_1year_state, y = sum_new_movers)) +
        geom_bar(stat = 'identity') +
        theme(axis.text.x = element_text(angle = 90, hjust = 1))
 })
 ```
 
-```{..., echo = FALSE}
-plotOutput(...)
+```{r, echo = FALSE}
+plotOutput('react_mov_plot')
 ```

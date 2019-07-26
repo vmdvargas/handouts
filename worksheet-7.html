@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>worksheet-7.utf8.md</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="generator" content="pandoc" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <base target="_blank">
+
+  <script type="text/javascript">
+    var SLIDE_CONFIG = {
+      // Slide settings
+      settings: {
+                        useBuilds: true,
+        usePrettify: true,
+        enableSlideAreas: true,
+        enableTouch: true,
+                      },
+
+      // Author information
+      presenters: [
+            ]
+    };
+  </script>
+
+
+  <style type="text/css">
+
+    b, strong {
+      font-weight: bold;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    summary {
+      display: list-item;
+    }
+
+    slides > slide {
+      -webkit-transition: all 0.4s ease-in-out;
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .auto-fadein {
+      -webkit-transition: opacity 0.6s ease-in;
+      -webkit-transition-delay: 0.4s;
+      -moz-transition: opacity 0.6s ease-in 0.4s;
+      -o-transition: opacity 0.6s ease-in 0.4s;
+      transition: opacity 0.6s ease-in 0.4s;
+      opacity: 0;
+    }
+/* https://github.com/ropensci/plotly/pull/524#issuecomment-468142578 */
+slide:not(.current) .plotly.html-widget{
+  display: block;
+}
+
+  </style>
+
+
+</head>
+
+<body style="opacity: 0">
+
+<slides>
+
+  <slide class="title-slide segue nobackground">
+        <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+          </hgroup>
+  </slide>
+
+<slide class=""><hgroup><h2>Seeing is Believing</h2></hgroup><article  id="seeing-is-believing">
+
+<pre class = 'prettyprint lang-r'>x &lt;- rnorm(10)
+mean(x)</pre>
+
+<pre >## [1] 0.1458926</pre>
+
+<p>Plain text about …something… important.</p>
+
+<p>Bulleted Lists</p>
+
+<ul>
+<li>SQL</li>
+<li>Python</li>
+<li>R</li>
+</ul>
+
+<p>Numbered Lists</p>
+
+<ol>
+<li>SQL</li>
+<li>Python</li>
+<li>R</li>
+</ol>
+
+<p>Tables</p>
+
+<table class = 'rmdtable'>
+<tr class="header">
+<th align="left">id</th>
+<th align="left">treatment</th>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">control</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">exclosure</td>
+</tr>
+</table>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>The Biggest Heading</h2></hgroup><article  id="the-biggest-heading">
+
+</article></slide><slide class=""><hgroup><h2>The Second Bigges Heading</h2></hgroup><article  id="the-second-bigges-heading">
+
+<h3>The Third Biggest Heading</h3>
+
+</article></slide><slide class=""><hgroup><h2>Chunks</h2></hgroup><article  id="chunks">
+
+<pre >The *emphasis* indicated by asterisks here does not become
+italicized, as it would outside a &quot;code fence&quot;.</pre>
+
+<pre >seq(1, 10)</pre>
+
+</article></slide><slide class=""><hgroup><h2>RMarkdown</h2></hgroup><article  id="rmarkdown">
+
+<pre class = 'prettyprint lang-r'>seq(1, 10)</pre>
+
+<pre >##  [1]  1  2  3  4  5  6  7  8  9 10</pre>
+
+</article></slide><slide class=""><hgroup><h2>Chunk Options</h2></hgroup><article  id="chunk-options">
+
+<pre >##  [1]  1  2  3  4  5  6  7  8  9 10</pre>
+
+</article></slide><slide class=""><hgroup><h2>Chunk Labels</h2></hgroup><article  id="chunk-labels">
+
+<pre class = 'prettyprint lang-r'>seq(1, 10)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Sourced Input</h2></hgroup><article  id="sourced-input">
+
+<pre class = 'prettyprint lang-r'>library(ggplot2)
+ggplot(state_movers,
+  aes(
+    x = reorder(current_state, -sum_new_movers), 
+    y = sum_new_movers)) +
+  geom_bar(stat = &#39;identity&#39;) +
+  theme(axis.text.x = element_text(
+    angle = 90, hjust = 1))</pre>
+
+<p><img src="worksheet-7_files/figure-html/bar_plot-1.png" width="720" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Alternative Engines</h2></hgroup><article  id="alternative-engines">
+
+<pre class = 'prettyprint lang-{...}'>greeting = &#39;Hello, {}!&#39;
+print(greeting.format(&#39;World&#39;))</pre>
+
+<pre class = 'prettyprint lang-bash'>echo &quot;Hello, ${USER}!&quot;</pre>
+
+<pre >## Hello, vanessa!</pre>
+
+</article></slide><slide class=""><hgroup><h2>Cache Dependencies</h2></hgroup><article  id="cache-dependencies">
+
+<p><img src="worksheet-7_files/figure-html/clean_bar_plot-1.png" width="720" /></p>
+
+</article></slide><slide class=""><hgroup><h2>Input Objects</h2></hgroup><article  id="input-objects">
+
+<div class="form-group shiny-input-container">
+<label class="control-label" for="pick_state">Pick a State</label>
+<div>
+<select id="pick_state"><option value="Alabama" selected>Alabama</option>
+<option value="Alaska">Alaska</option>
+<option value="Arizona">Arizona</option>
+<option value="Arkansas">Arkansas</option>
+<option value="California">California</option>
+<option value="Colorado">Colorado</option>
+<option value="Connecticut">Connecticut</option>
+<option value="Delaware">Delaware</option>
+<option value="District of Columbia">District of Columbia</option>
+<option value="Florida">Florida</option>
+<option value="Georgia">Georgia</option>
+<option value="Hawaii">Hawaii</option>
+<option value="Idaho">Idaho</option>
+<option value="Illinois">Illinois</option>
+<option value="Indiana">Indiana</option>
+<option value="Iowa">Iowa</option>
+<option value="Kansas">Kansas</option>
+<option value="Kentucky">Kentucky</option>
+<option value="Louisiana">Louisiana</option>
+<option value="Maine">Maine</option>
+<option value="Maryland">Maryland</option>
+<option value="Massachusetts">Massachusetts</option>
+<option value="Michigan">Michigan</option>
+<option value="Minnesota">Minnesota</option>
+<option value="Mississippi">Mississippi</option>
+<option value="Missouri">Missouri</option>
+<option value="Montana">Montana</option>
+<option value="Nebraska">Nebraska</option>
+<option value="Nevada">Nevada</option>
+<option value="New Hampshire">New Hampshire</option>
+<option value="New Jersey">New Jersey</option>
+<option value="New Mexico">New Mexico</option>
+<option value="New York">New York</option>
+<option value="North Carolina">North Carolina</option>
+<option value="North Dakota">North Dakota</option>
+<option value="Ohio">Ohio</option>
+<option value="Oklahoma">Oklahoma</option>
+<option value="Oregon">Oregon</option>
+<option value="Pennsylvania">Pennsylvania</option>
+<option value="Rhode Island">Rhode Island</option>
+<option value="South Carolina">South Carolina</option>
+<option value="South Dakota">South Dakota</option>
+<option value="Tennessee">Tennessee</option>
+<option value="Texas">Texas</option>
+<option value="Utah">Utah</option>
+<option value="Vermont">Vermont</option>
+<option value="Virginia">Virginia</option>
+<option value="Washington">Washington</option>
+<option value="West Virginia">West Virginia</option>
+<option value="Wisconsin">Wisconsin</option>
+<option value="Wyoming">Wyoming</option>
+<option value="Puerto Rico">Puerto Rico</option></select>
+<script type="application/json" data-for="pick_state" data-nonempty="">{}</script>
+</div>
+</div>
+
+<div id="mov_plot" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+
+</article></slide><slide class=""><hgroup><h2>Reactivity</h2></hgroup><article  id="reactivity">
+
+<div id="react_mov_plot" class="shiny-plot-output" style="width: 100% ; height: 400px"></div> 
+<script type="application/shiny-prerendered" data-context="server-start">
+library(knitr)
+library(tools)
+opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  cache = TRUE)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="data">
+source('worksheet-7.R')
+cty_to_cty <- subset(cty_to_cty, !is.na(movers_state_est))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+library(dplyr)
+output[['mov_plot']] <- renderPlot({
+  cty_to_cty %>%
+    filter(current_state == input[['pick_state']]) %>%
+    group_by(prior_1year_state) %>%
+    summarise(sum_new_movers = sum(movers_state_est, na.rm = TRUE)) %>%
+    ggplot(aes(x = prior_1year_state, y = sum_new_movers)) +
+    geom_bar(stat = 'identity') +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+plot_data <- reactive({
+    filter(cty_to_cty, current_state == input[['pick_state']]) %>%
+    group_by(prior_1year_state) %>%
+    summarise(sum_new_movers = sum(movers_state_est, na.rm = TRUE))
+})
+output[['react_mov_plot']] <- renderPlot({
+  plot_data() %>%
+    ggplot(aes(x = prior_1year_state, y = sum_new_movers)) +
+       geom_bar(stat = 'identity') +
+       theme(axis.text.x = element_text(angle = 90, hjust = 1))
+})
+</script>
+ <!--html_preserve-->
+
+<script type="application/shiny-prerendered" data-context="dependencies">
+{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["bootstrap"]},{"type":"character","attributes":{},"value":["3.3.5"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/bootstrap"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["viewport"]}},"value":[{"type":"character","attributes":{},"value":["width=device-width, initial-scale=1"]}]},{"type":"character","attributes":{},"value":["js/bootstrap.min.js","shim/html5shiv.min.js","shim/respond.min.js"]},{"type":"character","attributes":{},"value":["css/bootstrap.min.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.14"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ioslides"]},{"type":"character","attributes":{},"value":["13.5.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/ioslides/ioslides-13.5.1"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["js/modernizr.custom.45394.js","js/prettify/prettify.js","js/prettify/lang-r.js","js/prettify/lang-yaml.js","js/hammer.js","js/slide-controller.js","js/slide-deck.js"]},{"type":"character","attributes":{},"value":["fonts/fonts.css","theme/css/default.css","theme/css/phone.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.14"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["selectize"]},{"type":"character","attributes":{},"value":["0.11.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["href"]}},"value":[{"type":"character","attributes":{},"value":["shared/selectize"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["css/selectize.bootstrap3.css"]},{"type":"character","attributes":{},"value":["<!--[if lt IE 9]>\n<script src=\"shared/selectize/js/es5-shim.min.js\"><\/script>\n<![endif]-->\n<script src=\"shared/selectize/js/selectize.min.js\"><\/script>"]},{"type":"NULL"},{"type":"NULL"},{"type":"logical","attributes":{},"value":[true]}]}]}
+</script>
+
+<!--/html_preserve-->
+
+<!--html_preserve-->
+
+<script type="application/shiny-prerendered" data-context="execution_dependencies">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","codetools","colorspace","compiler","crayon","datasets","digest","dplyr","evaluate","ggplot2","glue","graphics","grDevices","grid","gtable","hms","htmltools","httpuv","knitr","labeling","later","lazyeval","magrittr","methods","mime","munsell","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","rlang","rmarkdown","scales","shiny","stats","stringi","stringr","tibble","tidyselect","tools","utils","vctrs","withr","xfun","xtable","yaml","zeallot"]},{"type":"character","attributes":{},"value":["0.2.1","1.1.4","3.6.1","0.2-16","1.4-1","3.6.1","1.3.4","3.6.1","0.6.20","0.8.3","0.14","3.2.0","1.3.1","3.6.1","3.6.1","3.6.1","0.3.0","0.5.0","0.3.6","1.5.1","1.23","0.3","0.8.0","0.2.2","1.5","3.6.1","0.7","0.5.0","1.4.2","2.0.2","1.0.1","0.3.2","2.4.0","1.0.1","1.3.1","0.4.0","1.14","1.0.0","1.3.2","3.6.1","1.4.3","1.4.0","2.1.3","0.2.5","3.6.1","3.6.1","0.2.0","2.1.2","0.8","1.8-4","2.2.0","0.1.0"]}]}]}
+</script>
+
+<!--/html_preserve--></article></slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!-- map slide visiblity events into shiny -->
+<script>
+  (function() {
+    if (window.jQuery) {
+       window.jQuery(document).on('slideleave', function(e) {
+         window.jQuery(e.target).trigger('hidden');
+      });
+       window.jQuery(document).on('slideenter', function(e) {
+         window.jQuery(e.target).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
